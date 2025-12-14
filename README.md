@@ -75,7 +75,7 @@ src/
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/ctambaoan/task-api.git
 cd task-api
 ```
 

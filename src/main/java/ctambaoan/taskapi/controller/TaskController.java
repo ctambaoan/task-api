@@ -8,6 +8,7 @@ import ctambaoan.taskapi.dto.UpdateDescriptionRequest;
 import ctambaoan.taskapi.service.TaskService;
 import jakarta.validation.Valid;
 import java.util.List;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,14 +22,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/tasks")
 public class TaskController {
 
     private final TaskService service;
-
-    public TaskController(TaskService service) {
-        this.service = service;
-    }
 
     @PostMapping
     public ResponseEntity<TaskResponse> create(@Valid @RequestBody CreateTaskRequest request) {

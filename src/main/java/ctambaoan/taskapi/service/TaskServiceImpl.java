@@ -5,16 +5,14 @@ import ctambaoan.taskapi.domain.TaskStatus;
 import ctambaoan.taskapi.exception.TaskNotFoundException;
 import ctambaoan.taskapi.repository.TaskRepository;
 import java.util.List;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class TaskServiceImpl implements TaskService {
 
     private final TaskRepository repository;
-
-    public TaskServiceImpl(TaskRepository repository) {
-        this.repository = repository;
-    }
 
     @Override
     public Task create(String name, String description) {
